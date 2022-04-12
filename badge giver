@@ -1,0 +1,10 @@
+local badgeservice = game:GetService("BadgeService")
+local id = (yourbadgeIDhere)
+script.Parent.Touched:Connect(function(hit)
+ 
+ if hit.Parent:FindFirstChild("Humanoid") then
+  
+  local plr = game.Players:GetPlayerFromCharacter(hit.Parent)
+  badgeservice:AwardBadge(plr.UserId, id)
+ end
+end)
